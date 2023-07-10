@@ -36,7 +36,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-        vm
         <activity
             android:name=".SplashActivity"
             android:exported="true"
