@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Map;
@@ -63,10 +64,18 @@ public class RegisterActivity extends AppCompatActivity {
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
+        TextInputEditText editTextPhoneNumber = findViewById(R.id.editText_phoneNumber);
+        TextInputEditText editTextCreatePassword = findViewById(R.id.editText_createPassword);
+        TextInputEditText editTextConfirmPassword = findViewById(R.id.editText_confirmPassword);
         home = (Button) findViewById(R.id.register_to_home_btn);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String input1 = editTextPhoneNumber.getText().toString();
+                String input2 = editTextConfirmPassword.getText().toString();
+
+                String toastMessage = "Phone number: " + input1 + "\nPassword: " + input2;
+                Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
                 openHomeActivity();
             }
         });
@@ -89,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Boolean validatePhoneNumber() {
         String phoneNumberField = Objects.requireNonNull(phoneNumber.getEditText()).getText().toString().trim();
 
-        if(phoneNumberField.isEmpty()) {
+        if (phoneNumberField.isEmpty()) {
             phoneNumber.setError("Field can't be empty");
             return false;
         } else {
@@ -118,9 +127,13 @@ public class RegisterActivity extends AppCompatActivity {
 
     private Boolean validateConfirmPassword() {
         String confirmPasswordField = Objects.requireNonNull(confirmPassword.getEditText()).getText().toString().trim();
+        String createPasswordField = Objects.requireNonNull(createPassword.getEditText()).getText().toString().trim();
 
-        if(confirmPasswordField.isEmpty()) {
+        if (confirmPasswordField.isEmpty()) {
             confirmPassword.setError("Field can't be empty");
+            return false;
+        } else if (!confirmPasswordField.equals(createPasswordField)) {
+            confirmPassword.setError("Passwords do not match");
             return false;
         } else {
             confirmPassword.setError(null);
@@ -130,11 +143,15 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void confirmInput(View v) {
         if (validatePhoneNumber() && validateCreatePassword() && validateConfirmPassword()) {
+            // Validation passed, perform your desired action
             String input = "Phone number: " + Objects.requireNonNull(phoneNumber.getEditText()).getText().toString().trim() + "\n";
             input += "Create password: " + Objects.requireNonNull(createPassword.getEditText()).getText().toString().trim() + "\n";
             input += "Confirm password: " + Objects.requireNonNull(confirmPassword.getEditText()).getText().toString().trim() + "\n";
 
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+
+            // Proceed with your next steps or open a new activity
+            openHomeActivity();
         }
     }
 

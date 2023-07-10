@@ -31,6 +31,7 @@
         app:endIconMode="clear_text">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_phoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone number"
@@ -50,6 +51,7 @@
         app:startIconDrawable="@drawable/baseline_lock_24">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_createPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/create_password"
@@ -71,6 +73,7 @@
         app:startIconDrawable="@drawable/baseline_lock_24">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_confirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password"
