@@ -5,8 +5,8 @@
   Purpose: The Cedi Loan App is designed to make applying for and managing loans easy and convenient.
   Scope: This documentation provides guidance on using and maintaining the Cedi Loan App.
   Target Audience: Developers, testers, and end-users.
-  App Architecture:
-  Overview: 
+# App Architecture:
+  *Overview:* 
   The Cedi Loan App follows a client-server architecture, where the mobile front-end interacts with the server back-end to provide loan-related services to users. The front-end is responsible for handling the user interface and capturing user inputs, while the back end manages the business logic, data processing, and communication with external systems.
   User Interface (UI): The mobile front-end provides a user-friendly interface for users to interact with the app. It includes screens for registration, login, loan application,  and profile features.
   User Input: The front-end captures user inputs, such as loan application details, and account information.
@@ -20,24 +20,24 @@
   4.	Once installed, open the app and follow the on-screen prompts to set up your account.
 
 # Features and User Guide:
-*Registration:*
+# *Registration:*
   Launch the Cedi Loan App on your mobile device.
   Tap on the "Register" button.
   Enter your personal details such as name, email, and phone number.
   Create a secure password and verify it.
   Tap on the "Register" button to complete the registration process.
-*Login:*
+# *Login:*
   Open the Cedi Loan App.
   Tap on the "Login" button.
   Enter your registered email and password.
   Tap on the "Login" button to access your account.
-*Loan Application:*
+# *Loan Application:*
   Log in to the Cedi Loan App.
   Tap on the "Apply for Loan" option.
   Provide the requested information, including loan amount, purpose, and repayment term.
   Attach any necessary documents as instructed.
   Review the loan application details and submit it for review.	
-*My Profile*
+# *My Profile*
   1.	Log in to the Cedi Loan App using your profile credentials.
   2.	Once logged in, navigate to your profile section titled "My Profile".
   3.	Within your profile, locate and tap on the "Loan Application" option.
@@ -52,32 +52,32 @@
   •	*Data Model:* The app's data model consists of entities such as User, Loan, Payment, and Document. User entities are associated with Loan and Payment entities, while Document entities are linked to Loan entities.
 
 # Contributions:
-*Member 1: Mintah Sylvester Kojo- 10972004*
+# *Member 1: Mintah Sylvester Kojo- 10972004*
 Responsibilities : Developing the wireframes of the application, the splash screen, and the main screen.
 Contributions: Implementing the logic and functionality behind the loan app.
-*Member 2: Zakaria  Safuratu - 10946068*
+# *Member 2: Zakaria  Safuratu - 10946068*
 Responsibilities: Designing the login activity user interface.
 Contributions: Creating the README file.
-*Member 3: Mortey Amos - 10987142*
+# *Member 3: Mortey Amos - 10987142*
 Responsibilities: Developing the activity_form2 user interface.
 Contributions: Implementing the logic and functionality behind the activity_form1 user interface.
-*Member 4: Obed Anokye Nyarko - 10982986*
+# *Member 4: Obed Anokye Nyarko - 10982986*
 Responsibilities: Developing the activity_form1 user interface and implementing the functionality of the screen.
 Contributions: Identifying and reporting bugs, ensuring the app works smoothly.
-*Member 5: Umar Ibrahim Alhassan – 10988620*
+# *Member 5: Umar Ibrahim Alhassan – 10988620*
 Responsibility: Developing and implementing the functionality of the profile page.
-*Member 6: Abdul Karim Osman Wumpini – 10983667*
+# *Member 6: Abdul Karim Osman Wumpini – 10983667*
 Responsibility: Develop the UI and logic of the register screen.
 Contribution: Assisting in minor tasks, such as development, design, and testing of other minor screens.
-*Member 7: Bernard Tettey – 10960275*
+# *Member 7: Bernard Tettey – 10960275*
 Responsibility: Develop the home page screen.
 Contribution: Assisting in minor tasks, such as development, design, and testing of other minor screens.
-*Member 8: Arko Percy – 10985899*
+# *Member 8: Arko Percy – 10985899*
 Responsibility: Develop the user interface and functionality of the fourth form screen.
 Contribution: Assisting in minor tasks, such as development, design, and testing of other minor screens.
-*Member 9: Ernest Obeng – 10957068*
+# *Member 9: Ernest Obeng – 10957068*
 Responsibility: Implementing the functionality of permissions.
 Contribution: Assisting in minor tasks, such as development, design, and testing of other minor screens.
-*Member 10: Godfred Ansoh JR – 10961347*
+# *Member 10: Godfred Ansoh JR – 10961347*
 Responsibly: Develop the UI and functionality of the third form screen. 
 Contribution: Assisting in minor tasks, such as development, design, and testing of other minor screens.
