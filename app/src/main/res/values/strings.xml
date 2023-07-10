@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CediLoan</string>
+    <string name="welcome_message">Welcome to CediLoan!</string>
+    <string name="register_message">Don\'t have an account? Register here.</string>
+    <string name="register">Register here.</string>
+    <string name="create_password">Create a 4-digit password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="login">Login</string>
+    <string name="home_description">Home page button</string>
+    <string name="edit_profile_btn">Edit profile</string>
+    <string name="notification_btn">Show notification</string>
+    <string name="save_and_continue">Save and continue</string>
+</resources>
