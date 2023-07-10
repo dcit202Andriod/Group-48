@@ -81,7 +81,7 @@ public class Form3Activity extends AppCompatActivity {
 
     private void openHomeActivity() {
         Intent intent = new Intent(this, HomeActivity.class);
-        intent.putExtra("review_status", "Application is under review. Check back in 5 minutes");
+        intent.putExtra("review_status", "Your application is under review. Check back in a few minutes.");
         startActivity(intent);
     }
 }
