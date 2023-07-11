@@ -58,7 +58,7 @@ Contributions: Implementing the logic and functionality behind the loan app.
 # *Member 2: Zakaria  Safuratu - 10946068*
 Responsibilities: Designing the login activity user interface.
 Contributions: Creating the README file.
-# *Member 3: Mortey Amos - 10987142*
+# *Member 3: Mottey Amos Kojo Ababio- 10987142*
 Responsibilities: Developing the activity_form2 user interface.
 Contributions: Implementing the logic and functionality behind the activity_form1 user interface.
 # *Member 4: Obed Anokye Nyarko - 10982986*
