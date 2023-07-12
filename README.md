@@ -2,7 +2,7 @@
 # DOCUMENTATION FOR APPLICATION
 # Application: CediLoan
 # Introduction
-  Purpose: The Cedi Loan App is designed to make applying for and managing loans easy and convenient.
+  Purpose: The CediLoan App is designed to make applying for and managing loans easy and convenient.
   Scope: This documentation provides guidance on using and maintaining the Cedi Loan App.
   Target Audience: Developers, testers, and end-users.
 # App Architecture:
