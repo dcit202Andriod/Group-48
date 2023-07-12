@@ -47,6 +47,7 @@
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_name1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Name"
@@ -60,7 +61,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/text_input_phoneNumber1"
+                    android:id="@+id/editText_phoneNumber1"
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -130,6 +131,7 @@
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_name2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Name"
@@ -143,7 +145,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/text_input_phoneNumber2"
+                    android:id="@+id/editText_phoneNumber2"
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -201,7 +203,7 @@
             android:layout_marginEnd="50dp"
             android:layout_marginTop="25dp"
             android:layout_gravity="center"
-            android:text="@string/save_and_continue"
+            android:text="Apply"
             android:textSize="10sp"
             android:textColor="@color/white"
             android:background="@drawable/custom_button"

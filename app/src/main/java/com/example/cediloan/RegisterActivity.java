@@ -5,6 +5,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
@@ -12,6 +13,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -30,7 +32,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
-    private static final String TAG = "PERMISSION_TAG";
+
     private Button home;
     private TextInputLayout phoneNumber;
     private TextInputLayout createPassword;
@@ -51,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
             @Override
-            public void updateDrawState( TextPaint ds) {
+            public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
                 ds.setColor(Color.BLUE);
                 ds.setUnderlineText(false);
@@ -72,21 +74,54 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String input1 = editTextPhoneNumber.getText().toString();
-                String input2 = editTextConfirmPassword.getText().toString();
+                String input2 = editTextCreatePassword.getText().toString();
+                String input3 = editTextConfirmPassword.getText().toString();
 
-                String toastMessage = "Phone number: " + input1 + "\nPassword: " + input2;
-                Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
-                openHomeActivity();
+                if (input1.isEmpty() || input2.isEmpty() || input3.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                } else {
+                    String toastMessage = "Phone number: " + input1 + "\nPassword: " + input3;
+                    Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
+                    confirmInput(view);
+                    openHomeActivity();
+                }
             }
         });
+
 
         phoneNumber = findViewById(R.id.text_input_phoneNumber);
         createPassword = findViewById(R.id.text_input_createPassword);
         confirmPassword = findViewById(R.id.text_input_confirmPassword);
-    }
 
-    private boolean hasLocationPermission(){
-        return checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+        phoneNumber.getEditText().setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    validatePhoneNumber();
+                }
+            }
+        });
+
+        createPassword.getEditText().setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    validatePhoneNumber();
+                    validateCreatePassword();
+                }
+            }
+        });
+
+        confirmPassword.getEditText().setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    validatePhoneNumber();
+                    validateCreatePassword();
+                    validateConfirmPassword();
+                }
+            }
+        });
     }
 
 
@@ -101,6 +136,9 @@ public class RegisterActivity extends AppCompatActivity {
         if (phoneNumberField.isEmpty()) {
             phoneNumber.setError("Field can't be empty");
             return false;
+        } else if (phoneNumberField.length() < 10 || phoneNumberField.length() > 10) {
+            phoneNumber.setError("Phone number must be 10 digits");
+            return false;
         } else {
             phoneNumber.setError(null);
             return true;
@@ -113,11 +151,8 @@ public class RegisterActivity extends AppCompatActivity {
         if (createPasswordField.isEmpty()) {
             createPassword.setError("Field can't be empty");
             return false;
-        } else if (createPasswordField.length() > 4) {
-            createPassword.setError("Password can't be more than 4 digits");
-            return false;
-        } else if (createPasswordField.length() < 4) {
-            createPassword.setError("Password can't be less than 4 digits");
+        } else if (createPasswordField.length() != 4) {
+            createPassword.setError("Password must have exactly four digits");
             return false;
         } else {
             createPassword.setError(null);
@@ -132,6 +167,9 @@ public class RegisterActivity extends AppCompatActivity {
         if (confirmPasswordField.isEmpty()) {
             confirmPassword.setError("Field can't be empty");
             return false;
+        } else if (confirmPasswordField.length() != 4) {
+            confirmPassword.setError("Password must have exactly four digits");
+            return false;
         } else if (!confirmPasswordField.equals(createPasswordField)) {
             confirmPassword.setError("Passwords do not match");
             return false;
@@ -141,18 +179,16 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+
     public void confirmInput(View v) {
         if (validatePhoneNumber() && validateCreatePassword() && validateConfirmPassword()) {
-            // Validation passed, perform your desired action
             String input = "Phone number: " + Objects.requireNonNull(phoneNumber.getEditText()).getText().toString().trim() + "\n";
             input += "Create password: " + Objects.requireNonNull(createPassword.getEditText()).getText().toString().trim() + "\n";
             input += "Confirm password: " + Objects.requireNonNull(confirmPassword.getEditText()).getText().toString().trim() + "\n";
 
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
 
-            // Proceed with your next steps or open a new activity
             openHomeActivity();
         }
     }
-
 }
