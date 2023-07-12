@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.NumberPicker;
 
 public class FormActivity2 extends AppCompatActivity {
@@ -26,13 +27,21 @@ public class FormActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form2);
 
-    saveAndContinue = findViewById(R.id.save_continue_btn);
-    saveAndContinue.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            openForm3Activity();
-        }
-    });
+        ImageButton backBtn = findViewById(R.id.back_button2);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openForm1Activity();
+            }
+        });
+
+        saveAndContinue = findViewById(R.id.save_continue_btn);
+        saveAndContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openForm3Activity();
+            }
+        });
 
         autoCompleteEducationalLevel = findViewById(R.id.educational_level);
         adapterEducationalLevel = new ArrayAdapter<String>(this, R.layout.list_item, educationalLevel);
@@ -52,6 +61,11 @@ public class FormActivity2 extends AppCompatActivity {
                 String item = parent.getItemAtPosition(position).toString();
             }
         });
+    }
+
+    private void openForm1Activity() {
+        Intent intent = new Intent(this, Form1Activity.class);
+        startActivity(intent);
     }
 
     private void openForm3Activity() {

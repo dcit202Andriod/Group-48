@@ -58,7 +58,7 @@
                 android:layout_marginStart="30dp"
                 android:textSize="17sp"
                 android:textColor="@color/white"
-                android:text="6,000 GHS" />
+                android:text="GH₵ 6,000" />
         </LinearLayout>
 
         <LinearLayout
@@ -96,9 +96,10 @@
         android:layout_marginEnd="15dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:textSize="17sp"
+        android:textSize="15sp"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:fontFamily="serif-monospace"
         android:visibility="gone" />
 
     <Button

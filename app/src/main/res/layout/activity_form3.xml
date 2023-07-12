@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/beige"
+    android:background="@color/Doger_blue"
     android:orientation="vertical"
     tools:context=".Form3Activity">
 
@@ -47,27 +47,45 @@
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_name1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Name"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_phoneNumber1"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:boxBackgroundMode="filled"
-                app:errorEnabled="true"
-                app:endIconDrawable="@drawable/baseline_contacts_24"
-                app:endIconMode="custom">
+                android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/editText_phoneNumber1"
+                    android:layout_width="320dp"
                     android:layout_height="wrap_content"
-                    android:hint="Phone number"
-                    android:inputType="number" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginBottom="10dp"
+                    app:boxBackgroundMode="filled"
+                    app:errorEnabled="true"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone number"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/contacts_image_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/baseline_contacts_24"
+                    android:clickable="true"
+                    android:onClick="myClickHandler" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -113,27 +131,45 @@
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_name2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Name"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_phoneNumber2"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:boxBackgroundMode="filled"
-                app:errorEnabled="true"
-                app:endIconDrawable="@drawable/baseline_contacts_24"
-                app:endIconMode="custom">
+                android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/editText_phoneNumber2"
+                    android:layout_width="320dp"
                     android:layout_height="wrap_content"
-                    android:hint="Phone number"
-                    android:inputType="phone" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginBottom="10dp"
+                    app:boxBackgroundMode="filled"
+                    app:errorEnabled="true"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone number"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/contacts_image_btn2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/baseline_contacts_24"
+                    android:clickable="true"
+                    android:onClick="myClickHandler" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,7 +203,7 @@
             android:layout_marginEnd="50dp"
             android:layout_marginTop="25dp"
             android:layout_gravity="center"
-            android:text="@string/save_and_continue"
+            android:text="Apply"
             android:textSize="10sp"
             android:textColor="@color/white"
             android:background="@drawable/custom_button"
