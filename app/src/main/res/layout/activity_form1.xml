@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/form_background"
+    android:background="@color/Doger_blue"
     tools:context=".Form1Activity">
 
     <LinearLayout
@@ -98,17 +98,11 @@
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date of birth:"
-                android:textSize="16sp" />
-
             <Button
                 android:id="@+id/datePickerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select date"
+                android:text="Date of birth"
                 android:textSize="16dp"
                 android:textColor="@color/cardview_dark_background"
                 android:backgroundTint="@color/powder_white"
@@ -121,17 +115,11 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Occupation:"
-                android:textSize="16sp"/>
-
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:hint="Select item"
+                android:hint="Occupation"
                 app:boxBackgroundMode="filled"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
@@ -149,18 +137,12 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Monthly income:"
-                android:textSize="16sp"/>
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/box_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:hint="Select item"
+                android:hint="Monthly Income"
                 app:boxBackgroundMode="filled"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
@@ -176,6 +158,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
@@ -186,7 +169,7 @@
 
             <NumberPicker
                 android:id="@+id/salary_paday_picker"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginStart="5dp"
                 android:background="@color/powder_white"/>

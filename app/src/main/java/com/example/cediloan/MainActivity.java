@@ -1,8 +1,13 @@
 package com.example.cediloan;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -16,7 +21,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "PERMISSION_TAG";
     private Button login;
+
+    private static final int PERMISSION_REQUEST_CODE = 1;
+    private String[] permissions = {
+            android.Manifest.permission.CAMERA,
+            android.Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.READ_CONTACTS
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +66,43 @@ public class MainActivity extends AppCompatActivity {
         ss.setSpan(clickableSpan, startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         register.setText(ss);
         register.setMovementMethod(LinkMovementMethod.getInstance());
+
+        if (!arePermissionsGranted()) {
+            ActivityCompat.requestPermissions(this, permissions, PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    private boolean arePermissionsGranted() {
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == PERMISSION_REQUEST_CODE) {
+            if (areAllPermissionsGranted(grantResults)) {
+                Toast.makeText(this, "Permissions granted.", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Permissions were not granted.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }
+    }
+
+
+    private boolean areAllPermissionsGranted(int[] grantResults) {
+        for (int result : grantResults) {
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void openRegisterActivity() {
