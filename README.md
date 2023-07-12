@@ -32,7 +32,7 @@
   Enter your registered email and password.
   Tap on the "Login" button to access your account.
 # *Loan Application:*
-  Log in to the Cedi Loan App.
+  Log in to the CediLoan App.
   Tap on the "Apply for Loan" option.
   Provide the requested information, including loan amount, purpose, and repayment term.
   Attach any necessary documents as instructed.
