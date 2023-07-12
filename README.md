@@ -7,7 +7,7 @@
   Target Audience: Developers, testers, and end-users.
 # App Architecture:
   *Overview:* 
-  The Cedi Loan App follows a client-server architecture, where the mobile front-end interacts with the server back-end to provide loan-related services to users. The front-end is responsible for handling the user interface and capturing user inputs, while the back end manages the business logic, data processing, and communication with external systems.
+  The CediLoan App follows a client-server architecture, where the mobile front-end interacts with the server back-end to provide loan-related services to users. The front-end is responsible for handling the user interface and capturing user inputs, while the back end manages the business logic, data processing, and communication with external systems.
   User Interface (UI): The mobile front-end provides a user-friendly interface for users to interact with the app. It includes screens for registration, login, loan application,  and profile features.
   User Input: The front-end captures user inputs, such as loan application details, and account information.
 
