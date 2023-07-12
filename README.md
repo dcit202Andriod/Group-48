@@ -15,7 +15,7 @@
   The mobile device requires an android version of about 12.0 or less to be able to install the application. There must also be at least 20MB of storage space on the device to be able to install the app.
   Installation Steps:
   1.	Open the app store on your mobile device.
-  2.	Search for "Cedi Loan App" and locate the official app.
+  2.	Search for "CediLoan App" and locate the official app.
   3.	Tap on the "Install" button to download and install the app.
   4.	Once installed, open the app and follow the on-screen prompts to set up your account.
 
