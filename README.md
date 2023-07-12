@@ -27,7 +27,7 @@
   Create a secure password and verify it.
   Tap on the "Register" button to complete the registration process.
 # *Login:*
-  Open the Cedi Loan App.
+  Open the CediLoan App.
   Tap on the "Login" button.
   Enter your registered email and password.
   Tap on the "Login" button to access your account.
