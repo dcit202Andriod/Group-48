@@ -38,7 +38,7 @@
   Attach any necessary documents as instructed.
   Review the loan application details and submit it for review.	
 # *My Profile*
-  1.	Log in to the Cedi Loan App using your profile credentials.
+  1.	Log in to the CediLoan App using your profile credentials.
   2.	Once logged in, navigate to your profile section titled "My Profile".
   3.	Within your profile, locate and tap on the "Loan Application" option.
   4.	Fill out the loan application form with the requested information, including:
