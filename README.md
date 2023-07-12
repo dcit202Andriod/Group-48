@@ -21,7 +21,7 @@
 
 # Features and User Guide:
 # *Registration:*
-  Launch the Cedi Loan App on your mobile device.
+  Launch the CediLoan App on your mobile device.
   Tap on the "Register" button.
   Enter your personal details such as name, email, and phone number.
   Create a secure password and verify it.
